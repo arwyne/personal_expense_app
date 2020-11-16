@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './widgets/user_transaction.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,6 +15,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  // String titleInput;
+  // String amountInput;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,18 +25,18 @@ class MyHomePage extends StatelessWidget {
           title: Text('Flutter App'),
         ),
         body: Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Card(
-              color: Colors.blue,
-              child: Container(
-                width: double.infinity,
+            Container(
+              child: Card(
+                color: Colors.blue,
                 child: Text("CHART!"),
+                elevation: 5,
               ),
-              elevation: 5,
+              width: double.infinity,
             ),
-            Card(
-              child: Text("LIST OF TX"),
-            )
+            UserTransactions(),
           ],
         ));
   }
